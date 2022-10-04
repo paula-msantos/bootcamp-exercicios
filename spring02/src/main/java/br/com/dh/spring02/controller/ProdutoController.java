@@ -13,12 +13,9 @@ import java.util.Optional;
 @RequestMapping("/produtos")
 public class ProdutoController {
 
-    List<Produto> produtos = new ArrayList<>();
-
-    public ProdutoController() {
-        produtos.add(new Produto(1, "Produto 01", 10));
-        produtos.add(new Produto(2, "Produto 02", 20));
-        produtos.add(new Produto(3, "Produto 03", 30));
+    @GetMapping("/{id}")
+    public Produto getProduto(@PathVariable int id) {
+        return new Produto(1, "Produto 1", 50);
     }
 
 }
