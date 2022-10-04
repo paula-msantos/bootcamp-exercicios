@@ -12,10 +12,20 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/produtos")
 public class ProdutoController {
+    // lista que vai receber Produto (os parametros sao os que estao lá), chamada produtos.
+    List<Produto> produtos = new ArrayList<>();
+
+    public ProdutoController(){
+        produtos.add(new Produto(1, "Produto 1", 10));
+        produtos.add(new Produto(2, "Produto 2", 20));
+        produtos.add(new Produto(3, "Produto 3", 30));
+
+    }
 
     @GetMapping("/{id}")
     public Produto getProduto(@PathVariable int id) {
-        return new Produto(1, "Produto 1", 50);
+        Produto p = produtos.get(id-1);
+        return p;
     }
 
 }
