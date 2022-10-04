@@ -1,6 +1,9 @@
 
 public class Temperaturas {
 
+    public Temperaturas() {
+    }
+
     public static void main(String[] args) {
 
         //fazendo uma lista de vetor
@@ -28,5 +31,9 @@ public class Temperaturas {
 
         System.out.println("Cidade com menor temperatura: " + cidadeTempMinima + " = " +temperaturaMinima+ " graus");
         System.out.println("Cidade com maior temperatura: " + cidadeTempMaxima + " = " +temperaturaMaxima+ " graus");
+
+
+
+
     }
 }
