@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/veiculos")
 public class VeiculoController {
 
-    @Autowired
+    @Autowired //injeçao de dependencia (o framework gera o objeto)
     private VeiculoService service;
 
     @GetMapping("/{placa}")
