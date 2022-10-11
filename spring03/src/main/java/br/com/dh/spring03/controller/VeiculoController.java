@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 
 @RestController
 @RequestMapping("/veiculos")
@@ -25,6 +27,10 @@ public class VeiculoController {
             Veiculo veiculo = service.getVeiculo(placa);
             return new ResponseEntity<>(veiculo, HttpStatus.OK);
 
+    }
+
+    public ResponseEntity<List<Veiculo>> getAll(){
+        return new ResponseEntity<>(service.getAllVeiculo(), HttpStatus.OK);
     }
 
 }

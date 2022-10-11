@@ -26,6 +26,6 @@ public class VeiculoService implements IVeiculo{
 
     @Override
     public List<Veiculo> getAllVeiculo() {
-        return null;
+        return repo.getAllVeiculo();
     }
 }
