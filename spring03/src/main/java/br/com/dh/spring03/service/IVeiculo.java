@@ -8,4 +8,6 @@ import java.util.List;
 public interface IVeiculo {
     Veiculo getVeiculo (String placa) throws NotFoundException;
     List<Veiculo> getAllVeiculo();
+    List<Veiculo> getAllOrderByValue();
+    void save(Veiculo veiculo);
 }

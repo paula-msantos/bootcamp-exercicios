@@ -3,13 +3,11 @@ package br.com.dh.spring03.controller;
 import br.com.dh.spring03.exception.NotFoundException;
 import br.com.dh.spring03.model.Veiculo;
 import br.com.dh.spring03.service.VeiculoService;
+import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -28,9 +26,20 @@ public class VeiculoController {
             return new ResponseEntity<>(veiculo, HttpStatus.OK);
 
     }
-
+    @GetMapping
     public ResponseEntity<List<Veiculo>> getAll(){
         return new ResponseEntity<>(service.getAllVeiculo(), HttpStatus.OK);
+    }
+
+    @GetMapping("/byValue")
+    public ResponseEntity<List<Veiculo>> getAllOrderByValue(){
+        return new ResponseEntity<>(service.getAllOrderByValue(), HttpStatus.OK);
+    }
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public void save(@RequestBody Veiculo veiculo){
+        service.save(veiculo);
     }
 
 }
