@@ -1,6 +1,6 @@
 package br.com.dh.spring03.controller;
 
-import br.com.dh.spring03.exception.VeiculoNotFoundException;
+import br.com.dh.spring03.exception.NotFoundException;
 import br.com.dh.spring03.model.Veiculo;
 import br.com.dh.spring03.service.VeiculoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,12 +21,9 @@ public class VeiculoController {
 
     @GetMapping("/{placa}")
     public ResponseEntity<Veiculo> getVeiculo(@PathVariable String placa){
-        try {
+
             Veiculo veiculo = service.getVeiculo(placa);
             return new ResponseEntity<>(veiculo, HttpStatus.OK);
-        } catch (VeiculoNotFoundException e) {
-            throw new RuntimeException(e);
-        }
 
     }
 
