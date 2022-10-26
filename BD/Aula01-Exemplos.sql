@@ -1,3 +1,5 @@
+-- Usando o BD Movies -- 
+
 use movies_db;
 # mostrar todos os filmes
 select * from movies;
@@ -5,6 +7,10 @@ select * from movies;
 # mostrar nome, sobrenome e classificaçao de todos os atores.
 select first_name, last_name, rating
 from actors;
+
+#mostrar o titulo do filme que recebeu mais premios
+select max(awards), title
+from movies;
 
 #mostrar o titulo de todas as series usando alias para que tanto o nome da tabela
 #qnto o campo estejam em Portugues
