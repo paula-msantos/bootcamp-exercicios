@@ -11,10 +11,13 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 public class Author {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Column (nullable = false)
+
+    @Column(nullable = false)
     private String name;
+
+    @OneToOne(mappedBy = "author")
+    private Address address;
 }

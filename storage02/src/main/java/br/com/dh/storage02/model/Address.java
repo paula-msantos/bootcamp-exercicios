@@ -18,4 +18,7 @@ public class Address {
     @Column(nullable = false)
     private String location;
 
+    @OneToOne
+    @JoinColumn(name = "id_author")
+    private Author author;
 }

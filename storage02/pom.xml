@@ -12,7 +12,7 @@
 	<artifactId>storage02</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>storage02</name>
-	<description>Segundo projeto de storage</description>
+	<description>Storage com Joins</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
@@ -33,8 +33,8 @@
 			<optional>true</optional>
 		</dependency>
 		<dependency>
-			<groupId>com.microsoft.sqlserver</groupId>
-			<artifactId>mssql-jdbc</artifactId>
+			<groupId>com.mysql</groupId>
+			<artifactId>mysql-connector-j</artifactId>
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
