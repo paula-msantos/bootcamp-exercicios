@@ -1,12 +1,18 @@
 package br.com.dh.testes01.calculadora;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CalculadoraTest {
-    Calculadora calculadora = new Calculadora();
+    Calculadora calculadora;
+
+    @BeforeEach  //roda esse metodo antes de cada teste
+    public void setuo(){
+        calculadora = new Calculadora();
+    }
 
     // dado_que_quando_entao
     // metodos_testado_o que é esperado
@@ -15,7 +21,6 @@ public class CalculadoraTest {
     @DisplayName("valida a soma")
     public void soma_returnDouble_whenValidInput (){
         // setup
-
         double n1 = 10;
         double n2 = 20;
         double expected = 30;
